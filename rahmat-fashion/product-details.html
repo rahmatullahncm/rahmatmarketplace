@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details - Rahmat's Fashion</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1>Rahmat's Fashion</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="cart.html">Cart</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="product-detail-page">
+    <div class="container">
+      <h2>Product Name: Cotton Formal Shirt</h2>
+      <img src="img/shirt1.jpg" alt="Cotton Shirt" style="max-width: 300px;" />
+      <p><strong>Price:</strong> ৳950</p>
+      <p><strong>Description:</strong> Comfortable cotton formal shirt, perfect for office and daily use.</p>
+      <button onclick="addToCart('1', 'Cotton Formal Shirt', 950, 'img/shirt1.jpg')">
+        Add to Cart
+      </button>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Rahmat's Fashion</p>
+    </div>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+
+    // Dummy product data (later replace with fetch or dynamic source)
+    const products = {
+      "1": {
+        name: "Classic White Shirt",
+        price: 950,
+        image: "img/shirt1.jpg",
+      },
+      "2": {
+        name: "Blue Denim Pant",
+        price: 1200,
+        image: "img/pant1.jpg",
+      },
+    };
+
+    if (id && products[id]) {
+      const product = products[id];
+      document.getElementById("product-name").textContent = product.name;
+      document.getElementById("product-image").src = product.image;
+      document.getElementById("product-image").alt = product.name;
+      document.getElementById("product-price").textContent = "৳" + product.price;
+      document.getElementById("add-to-cart-btn").onclick = function () {
+        addToCart(id, product.name, product.price, product.image);
+      };
+    } else {
+      document.querySelector("main").innerHTML = "<p>Product not found.</p>";
+    }
+  </script>
+
+
+
+</body>
+
+</html>

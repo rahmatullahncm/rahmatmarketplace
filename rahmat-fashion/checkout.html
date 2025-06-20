@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout - Rahmat's Fashion</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1>Rahmat's Fashion</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="cart.html">Cart</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="checkout-page">
+    <div class="container">
+      <h2>Checkout</h2>
+      <form>
+        <label>Name:</label><br />
+        <input type="text" required /><br />
+        <label>Address:</label><br />
+        <textarea required></textarea><br />
+        <h3>Payment Method</h3>
+        <select id="payment-method" required>
+          <option value="">Select</option>
+          <option value="bkash">bKash</option>
+          <option value="nagad">Nagad</option>
+          <option value="cod">Cash on Delivery</option>
+        </select><br /><br />
+        <div id="trx-section" style="display: none; margin-top: 10px;">
+          <label for="trx-id">Enter Transaction ID (from bKash/Nagad):</label>
+          <input type="text" id="trx-id" placeholder="e.g. TXN1234567" required>
+        </div>
+        <button type="submit">Confirm Order</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Rahmat's Fashion</p>
+    </div>
+  </footer>
+</body>
+
+</html>
